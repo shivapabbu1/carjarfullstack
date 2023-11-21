@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React from 'react';
+import FirstSection from './Components/FirstSection';
+
+
+import "./App.css";
+
+import Dentist from './Components/Dentist';
+import Gynoclogist from './Components/Gynoclogist';
+import Nutrirtion from './Components/Nutrirtion';
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+ 
+
+ 
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <section>
+    <BrowserRouter>
+  
+    <Routes>
+      <Route path="/" element={<FirstSection/>}/>
+      <Route path="/dental" element={<Dentist/>}/>
+      <Route path="/gynco" element={<Gynoclogist/>}/>
+      <Route path="/nutro" element={<Nutrirtion/>}/>
+     </Routes>
+      </BrowserRouter>
+
+   
+    </section>
   );
-}
+};
 
 export default App;
